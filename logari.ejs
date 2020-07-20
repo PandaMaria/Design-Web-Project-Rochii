@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style_400.css" type="text/css" media="screen and (max-width: 400px)" />
+    <link rel="stylesheet" href="/css/style_700.css" type="text/css" media="screen and (max-width: 700px)" />
+	<meta charset="UTF-8">
+	<meta name="description" content="Richii elegante, la moda, diverse stiluri">
+	<meta name="keywords" content="rochii">
+	<meta name="author" content="RAMIA">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/imagini/favicon.ico" rel="icon" type="image/x-icon" />	
+	<title>Inregistrare utilizator</title>
+	<script src="js/ejs.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body class="container">
+
+<%- include("../fragmente/header")  %>
+
+<main>
+    
+    <h1>JSON</h1>
+    <p>Continut JSON</p>
+		<!-- aici se va afisa continutul neprocesat al JSON-ului -->
+		<div class="afis" id="afisJson">
+    </div>
+		
+    <p>Cu template:</p>
+		
+		<!-- aici se va afisa continutul JSON-ului cu formatul din template-ul definit in script -->
+		<div class="afis" id="afisTemplate">
+    </div>
+</main>
+
+
+
+</body>
+</html>  

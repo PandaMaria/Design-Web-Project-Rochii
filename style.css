@@ -1,0 +1,300 @@
+ *{
+  padding:0;
+  margin:0;
+  text-indent:0;
+}
+
+html{
+  font-size:18px;
+  font-family:'Sen', sans-serif;
+}
+
+body{
+  padding-top:3rem;
+  background:rgb(250,250,255);
+  min-width:200px;
+}
+
+main{
+  padding-left:2em;
+  padding-right:2em;
+  padding-top:2em;
+  background:white;
+  box-sizing:border-box;
+  display:grid;
+  grid-template-columns:repeat(1,1fr);
+  grid-template-areas: "gr-imgtxt" 
+  "gr-sectiuni"
+  "gr-img_tabel"
+  "gr-galerie" 
+  "gr-contact";                 
+}
+
+#imgtxt{
+  grid-area:"gr-imgtxt";
+  width:50%;
+  min-width:150px;
+  max-width:400px;
+  float:left;
+  box-sizing:border-box;
+}
+
+#sectiuni{
+  grid-area:"gr-sectiuni";
+  display:flex;
+  flex-wrap:wrap;
+}
+
+#sectiuni>section{
+  flex-basis:0;
+  flex-grow:1;
+  margin-left:0.5em;
+  margin-bottom:0;
+  padding:0.4em;
+}
+
+#sectiuni>section:first-of-type{
+  margin-left:0em;
+}
+
+#img_tabel{
+  grid-area:"gr-img_tabel";
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+
+#galerie{
+  grid-area:"gr-galerie";
+}
+
+#contact{
+  grid-area:"gr-contact";
+  left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color:burlywood;
+	color:black;
+	text-align: center;
+}
+
+#contact ul{
+  list-style-type:none;
+}
+
+
+#poza_tabel{
+  width:50%;
+  min-width:150px;
+  max-width:400px;
+  float:left;
+  margin-right:0.4em;
+  border-radius:50%;
+  box-sizing:border-box;
+}
+
+#galerie {
+ display:grid;
+ grid-template-columns: repeat(3,1fr);
+ grid-row-gap:0.5em;
+ grid-column-gap:0.5em;
+}
+#galerie img{
+  width: 50%;
+  min-width:50px;
+  max-width:400px;
+}
+#galerie figcaption{
+  text-align:center;
+}
+#galerie>figure:nth-child(4){
+  grid-area: 2/2/3/3;
+}
+
+#galerie>figure:nth-child(5){
+  grid-area: 3/1/4/2;
+}
+
+#galerie>figure:nth-child(6){
+  grid-area: 3/2/4/3;
+}
+
+#galerie>figure:nth-child(7){
+  grid-area: 3/3/4/4;
+}
+
+
+
+
+#header{
+  padding: 50px;
+  text-align: center;
+  background: lightblue;
+  color: purple;
+}
+
+nav{
+	position:fixed;
+	top:0;
+    left:0px;
+	width:100%;
+	}
+  
+ul.menu>li, ul.menu>li>ul.submenu>li{
+		display:block;
+		font-size:1.2rem;
+		font-weight:bold;
+		height:2rem;
+		line-height:2rem;
+		text-align:center;		
+		list-style-type:none;
+		overflow:hidden;
+	}
+ul.menu>li{
+	 float:left;
+	 width:25%;
+	}
+ul.submenu>li{
+	 width:100%;
+	}
+ul.menu>li>a,ul.menu>li>div,ul.submenu>li>a{
+		display:block;
+		height:	100%;
+		text-decoration:none;
+		color:black;
+	}
+ul.menu>li:nth-of-type(even) a, ul.menu>li:nth-of-type(even) div{
+		background:violet;
+	}
+ul.menu>li:nth-of-type(odd) a, ul.menu>li:nth-of-type(odd) div{
+		background:lightpink;
+	}
+
+ul.menu>li>ul.submenu{
+		position:relative;
+		top:0px;
+	}
+ul.menu>li>ul.submenu>li
+	{
+		border-top:1px solid black;
+	}
+ul.menu>li>ul.submenu>li:last-child
+	{
+		border-bottom:1px solid black;
+	}
+
+ul.menu>li>a:hover, ul.submenu>li>a:hover{
+		background:MediumSeaGreen;
+	}
+ul.menu>li:hover ul.submenu>li{
+			width:100%;
+			border:none;
+		}
+ul.menu>li:hover{
+  		overflow:visible;
+
+}
+
+
+@keyframes linie{
+  0%{
+    width:0;
+  }
+  100%{
+    width:100%
+  }
+}   
+#container_animatie{
+	position:relative;
+	overflow:hidden;
+  border:1px solid black;
+  width:400px;
+  height:300px;
+  box-sizing:content-box;
+}
+
+#derulant{
+	display:flex;
+    flex-wrap:nowrap;
+	position: absolute;
+	animation-name:go;
+	animation-direction:alternate;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+	animation-duration:15s;
+}
+#derulant>*{
+	flex-shrink: 0;
+  position:relative;
+}
+#container_animatie figure:hover figcaption{
+  position:absolute;
+  bottom:0;
+  width:auto;
+  height:100%;
+  font-size:1.5em;
+  background:lightpink;
+  text-align:center;
+}
+
+#container_animatie *{
+  height:100%;
+  width:auto;
+}
+@keyframes go{
+	0%{
+    	left:0px;
+    }
+	100%{
+		left:-200%;
+	}
+}
+
+
+
+footer{
+}
+#link-top{
+  position:fixed;
+  bottom:0.3em;
+  opacity:0.5;
+  left:0.3em;
+  width:3rem;
+  box-sizing: border-box;
+  height:3rem;
+  line-height:3rem;
+  text-align:center;
+  border:1px solid grey;
+  border-radius:50%;
+  background: rgb(220,220,220);
+}
+#link-top:hover{
+  opacity:1;
+}
+#triunghi{
+  height:0px;
+  width:0;
+  display:inline-block;
+  border-bottom:1.5rem solid grey;
+  border-left:1rem solid transparent;
+  border-right:1rem solid transparent;
+  vertical-align: top;
+  transform: translateY(30%);
+}
+
+
+.afis{
+	border:2px solid skyblue;
+	padding:0.7em;
+}
+
+.templ_student{
+	border:1px solid grey;
+	padding:0.4em;
+}

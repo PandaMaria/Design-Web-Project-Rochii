@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="/css/style.css" type="text/css" />
+	<link rel="stylesheet" href="/css/style_400.css" type="text/css" media="screen and (max-width: 400px)" />
+    <link rel="stylesheet" href="/css/style_700.css" type="text/css" media="screen and (max-width: 700px)" />
+	<meta charset="UTF-8">
+	<meta name="description" content="Richii elegante, la moda, diverse stiluri">
+	<meta name="keywords" content="rochii">
+	<meta name="author" content="RAMIA">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/imagini/favicon.ico" rel="icon" type="image/x-icon" />	
+	<title>Inregistrare utilizator</title>
+</head>
+<body class="container">
+
+<%- include("../fragmente/header")  %>
+
+<main>
+    <div>
+        <h1>Inregistrare utilizator</h1>
+        <p>Completati formularul pentru rochii splendide<br/>
+		</p>
+		<% if(!locals.rsstatus) { %><!-- verific daca status e definit-->
+		<form method="post" action="/inreg" class="date"> <!-- daca nu pun action atunci actionul default este pagina curenta -->
+			<p>
+			<label>
+				Username: <input type="text" name="username" value="anisoara123">
+			</label>
+			</p>
+			<p>
+			<label>
+				Nume: <input type="text" name="nume" value="Marina Vrabie">
+			</label>
+			</p>
+			<p>
+			<label>
+				Preferinte(separate cu virgula): <input type="text" name="preferinte" value="de nunta, scurte" size="50">
+			</label>
+			</p>
+			<p>
+			<label>
+				Parola: <input type="password" name="parola" value="">
+			</label>
+			</p>
+			<p>
+			<label>
+				Reintroduceti parola: <input type="password" name="rparola" value="">
+			</label>
+			</p>
+			<p>
+			<label>
+				Email: <input type="text" name="email" value="anicuta@gmail.com"  size="50">
+			</label>
+			</p>
+			<p>		
+			<input type="submit" value="Submit">
+			</p>
+		</form>
+		<% } else if(rsstatus=="ok"){ %>
+			<p>Date introduse</p>
+		<% } else {%>
+			<p>Eroare</p>
+		<% } %>
+    </div>
+</main>
+
+<%- include("../fragmente/footer")  %>
+
+</body>
+</html>

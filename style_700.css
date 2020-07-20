@@ -1,0 +1,32 @@
+html{
+  font-size:13.5px;
+}
+
+main{
+  padding-left:1em;
+  padding-right:1em;
+  
+  display:block;
+                      
+}
+
+#galerie{
+  grid-template-columns: repeat(2,1fr);
+}
+
+#galerie>figure:nth-child(4){
+  grid-area: auto;
+}
+#galerie>figure:nth-child(5){
+  grid-area: auto;
+}
+
+#galerie>figure:nth-child(6){
+  grid-area: auto;
+}
+
+#galerie>figure:nth-child(7){
+  grid-area: auto;
+}
+
+

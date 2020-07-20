@@ -1,0 +1,40 @@
+	<header> 
+    <nav>
+      <ul class="menu">
+        <li> <a href="/index"> Home</a> 
+          <ul class="submenu">
+            <li> <a href="/favorite"> Favorite </a></li>
+            <li> <a href="/promotii"> Promotii </a></li>
+			<li><a href="/inregistrare" >Inregistrare</a></li>
+			<li><a href="/logari" >Logari</a></li>
+           </ul> </li>
+        <li> <a href="/produse"> Produse </a> 
+           <ul class="submenu">
+             <li> <a href="/rscurte"> Rochii Scurte</a> </li>
+             <li> <a href="/rlungi"> Rochii Lungi</a> </li>
+            </ul> </li>
+        <li> <a href="/comenzi"> Comenzi </a> </li>
+        <li> <a href="/producatori"> Producatori </a> </li>
+      </ul>
+    </nav>
+	<div>
+		<a href="index.ejs"> <h1 id="header"> ROCHII RAMIA </h1> </a>
+	</div>
+
+<% if(!locals.username) {  %>
+	<form method="post" action="/login">
+		<label>
+				Username: <input type="text" name="username" value="">
+			</label>
+			<label>
+				Parola: <input type="password" name="parola" value="">
+			</label>
+			<input type="submit" value="OK">
+	</form>
+	<% }
+	else { %>
+	Utilizator logat: <%= locals.username  %>
+	<a href="/logout">Logout</a>
+	<% } %>
+	<hr/>
+  </header>
